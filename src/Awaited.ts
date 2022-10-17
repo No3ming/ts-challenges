@@ -6,6 +6,11 @@ type ExampleType = Promise<string>
 
 type Result1 = MyAwaited<ExampleType> // string
 
-type MyAwaited<T> = T extends (...args: any) => infer U ? U : never
+type MyAwaited<T> = T extends Promise<infer P>
+   ? P extends Promise<unknown> ? MyAwaited<P> : P
+: never
 
-const a11: Result1 = Promise.resolve('12')
+async function ayn () {
+    const a: Result1 = await Promise.resolve('123')
+}
+// const a11: Result1 = await Promise.resolve('12')
