@@ -7,6 +7,7 @@
         ],
         "strict": true,
         "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
         "moduleResolution": "node",
         "skipLibCheck": true,
         "noUnusedLocals": false,
@@ -14,9 +15,9 @@
         "noImplicitReturns": true,
         "allowJs": true
     },
-    "include": [
-        "**/src/**/*"
-    ],
+    // "include": [
+    //     "**/src/**/*"
+    // ],
     "exclude": [
         "node_modules"
     ]
